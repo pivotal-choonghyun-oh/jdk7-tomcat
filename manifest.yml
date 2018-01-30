@@ -1,0 +1,8 @@
+applications:
+- name: jdk7
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 1.7.0_+ }, memory_calculator: { stack_threads: 200 } }'

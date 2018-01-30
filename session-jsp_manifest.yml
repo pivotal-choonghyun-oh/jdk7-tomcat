@@ -1,0 +1,11 @@
+applications:
+- name: session-jsp
+  instances: 1
+  memory: 512M
+  disk_quota: 1024M
+  routes:
+  - route: session-jsp.apps.pcfdemo.net/a
+  - route: session-jsp.apps.pcfdemo.net/b
+  services:
+  - r-session-replication
+  stack: cflinuxfs2

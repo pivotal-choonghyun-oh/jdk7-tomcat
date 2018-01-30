@@ -1,0 +1,15 @@
+applications:
+- name: pm
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  routes:
+  - route: mes.apps.pcfdemo.net/pm/gmes2
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    JBP_CONFIG_TOMCAT: '{ tomcat: { context_path: "/pm/gmes2", external_configuration_enabled:
+      true }, external_configuration: { version: 1.0.+, repository_root: "http://tomcat-ctx.apps.pcfdemo.net"
+      } }'
+  services:
+  - r-session-replication
+  stack: cflinuxfs2
